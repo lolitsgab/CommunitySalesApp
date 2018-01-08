@@ -1,5 +1,6 @@
 package com.example.gabriel.letgo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -29,6 +30,8 @@ public class GoodsGalleryFragment extends Fragment
         gView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent focusedView = new Intent(getContext(), FocusOnGoodActivity.class);
+                startActivity(focusedView);
                 Toast.makeText(getContext(), "Pressed On An Image", Toast.LENGTH_SHORT).show();
             }
         });
