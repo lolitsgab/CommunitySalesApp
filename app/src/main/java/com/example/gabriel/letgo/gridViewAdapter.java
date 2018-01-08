@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,6 +53,11 @@ public class gridViewAdapter extends BaseAdapter
         letters.add(R.drawable.x);
         letters.add(R.drawable.y);
         letters.add(R.drawable.z);
+
+    }
+    //
+    public gridViewAdapter(Context context, File goodNames) //make it accept a list when releasing
+    {
 
     }
 
