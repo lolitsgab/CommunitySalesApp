@@ -1,9 +1,12 @@
 package com.example.gabriel.letgo;
 
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +15,10 @@ import android.widget.GridView;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 public class GoodsGalleryFragment extends Fragment
 {
 
@@ -19,34 +26,10 @@ public class GoodsGalleryFragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.gallery_view, container, false);
-        gridViewAdapter adapter = new gridViewAdapter(getActivity());
-        GridView gView = rootView.findViewById(R.id.gridView);
-        ImageButton captureImage = rootView.findViewById(R.id.uploadGoodsButton);
-       // if(gridView != null)
-            gView.setAdapter(adapter);
-
-
-        //---------------------------  Listener for Grid Items  --------------------------------------------//
-        gView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent focusedView = new Intent(getContext(), FocusOnGoodActivity.class);
-                startActivity(focusedView);
-                Toast.makeText(getContext(), "Pressed On An Image", Toast.LENGTH_SHORT).show();
-            }
-        });
-        //---------------------------  Listener for Grid Items  --------------------------------------------//
-
-        //---------------------------  Listener for Camera Button  --------------------------------------------//
-        captureImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getContext(), "On press, launch new camera activity and pass to AI", Toast.LENGTH_SHORT).show();
-            }
-        });
-        //---------------------------  Listener for Camera Button  --------------------------------------------//
-
-
+        RecyclerView mRecyclerView = (RecyclerView) rootView.findViewById(R.id.masonry_grid);
+        mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.VERTICAL));
+        MasonAdapter adapter = new MasonAdapter(getContext());
+        mRecyclerView.setAdapter(adapter);
         return rootView;
     }
 }
