@@ -8,7 +8,7 @@
     android:background="@mipmap/back_good_focus">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/focused_good_image"
         android:layout_width="340dp"
         android:layout_height="702dp"
         android:layout_marginBottom="92dp"
@@ -53,7 +53,7 @@
         android:layout_marginTop="40dp"
         android:backgroundTint="@android:color/transparent"
         android:scaleType="fitCenter"
-        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintBottom_toTopOf="@+id/focused_good_image"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
