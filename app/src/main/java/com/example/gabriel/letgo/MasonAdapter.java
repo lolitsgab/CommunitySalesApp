@@ -1,11 +1,19 @@
 package com.example.gabriel.letgo;
 import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.DrawableRes;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.Target;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.Inflater;
 
@@ -15,14 +23,12 @@ import java.util.zip.Inflater;
 
 public class MasonAdapter extends RecyclerView.Adapter<MasonAdapter.MasonView> {
    Context context;
-    //Test Images
-   int[] imgList = {R.drawable.a, R.drawable.b, R.drawable.c, R.drawable.d,
-           R.drawable.e, R.drawable.f, R.drawable.g, R.drawable.h,
-           R.drawable.i, R.drawable.j};
+   List<Drawable> images;
 
-    public MasonAdapter(Context context)
+    public MasonAdapter(Context context, List<Drawable> images)
     {
         this.context = context;
+        this.images = images;
     }
 
     @Override
@@ -34,12 +40,15 @@ public class MasonAdapter extends RecyclerView.Adapter<MasonAdapter.MasonView> {
 
     @Override
     public void onBindViewHolder(MasonView holder, int position) {
-        holder.imageView.setImageResource(imgList[position]);
+        Glide.with(context)
+                .load(images.get(position))
+                .thumbnail(0.02f)
+                .into(holder.imageView);
     }
 
     @Override
     public int getItemCount() {
-        return imgList.length;
+        return images.size();
     }
 
     public class MasonView extends RecyclerView.ViewHolder {
