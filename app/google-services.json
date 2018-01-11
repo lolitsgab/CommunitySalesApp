@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "297396517738",
+    "firebase_url": "https://lesgo-2b541.firebaseio.com",
+    "project_id": "lesgo-2b541",
+    "storage_bucket": "lesgo-2b541.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:297396517738:android:d3caf92637fd9028",
+        "android_client_info": {
+          "package_name": "com.example.gabriel.letgo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "297396517738-k1h8lastuvtq8tr2tbddf7ubk4caoeh4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gabriel.letgo",
+            "certificate_hash": "cdb437d69d1af304134cbeb7c120e4daf94aa410"
+          }
+        },
+        {
+          "client_id": "297396517738-molgrb2l6cb9una8nflqle3fm9ul6v2j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3ih9lmoUKwcphQTugcw3phloew-rsk_g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "297396517738-molgrb2l6cb9una8nflqle3fm9ul6v2j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         ViewPager slider = findViewById(R.id.container);
         CustPageAdapter adapter = new CustPageAdapter(getSupportFragmentManager());
         slider.setAdapter(adapter);
